@@ -1,0 +1,36 @@
+[2026-06-01T16:23:08.727+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: user_automation.stream_data_from_api manual__2026-06-01T16:09:16+00:00 [queued]>
+[2026-06-01T16:23:08.739+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: user_automation.stream_data_from_api manual__2026-06-01T16:09:16+00:00 [queued]>
+[2026-06-01T16:23:08.739+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2026-06-01T16:23:08.758+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): stream_data_from_api> on 2026-06-01 16:09:16+00:00
+[2026-06-01T16:23:08.767+0000] {standard_task_runner.py:57} INFO - Started process 184 to run task
+[2026-06-01T16:23:08.775+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'user_automation', 'stream_data_from_api', 'manual__2026-06-01T16:09:16+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/kafka_stream.py', '--cfg-path', '/tmp/tmpta1u8_2w']
+[2026-06-01T16:23:08.780+0000] {standard_task_runner.py:85} INFO - Job 5: Subtask stream_data_from_api
+[2026-06-01T16:23:08.876+0000] {task_command.py:410} INFO - Running <TaskInstance: user_automation.stream_data_from_api manual__2026-06-01T16:09:16+00:00 [running]> on host 0453d8ad7e71
+[2026-06-01T16:23:10.180+0000] {taskinstance.py:1568} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='gersonleto' AIRFLOW_CTX_DAG_ID='user_automation' AIRFLOW_CTX_TASK_ID='stream_data_from_api' AIRFLOW_CTX_EXECUTION_DATE='2026-06-01T16:09:16+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-01T16:09:16+00:00'
+[2026-06-01T16:23:10.279+0000] {kafka_stream.py:44} INFO - Starting Kafka producer task
+[2026-06-01T16:23:10.280+0000] {kafka_stream.py:47} INFO - Connecting to Kafka broker at broker:29092
+[2026-06-01T16:23:10.292+0000] {conn.py:380} INFO - <BrokerConnection node_id=bootstrap-0 host=broker:29092 <connecting> [IPv4 ('172.18.0.5', 29092)]>: connecting to broker:29092 [('172.18.0.5', 29092) IPv4]
+[2026-06-01T16:23:10.293+0000] {conn.py:1205} INFO - Probing node bootstrap-0 broker version
+[2026-06-01T16:23:10.295+0000] {conn.py:410} INFO - <BrokerConnection node_id=bootstrap-0 host=broker:29092 <connecting> [IPv4 ('172.18.0.5', 29092)]>: Connection complete.
+[2026-06-01T16:23:10.406+0000] {conn.py:1267} INFO - Broker version identified as 2.5.0
+[2026-06-01T16:23:10.407+0000] {conn.py:1268} INFO - Set configuration api_version=(2, 5, 0) to skip auto check_version requests on startup
+[2026-06-01T16:23:10.416+0000] {kafka_stream.py:53} INFO - Connected to Kafka successfully
+[2026-06-01T16:23:10.417+0000] {kafka_stream.py:57} INFO - Fetching data iteration 1
+[2026-06-01T16:23:16.141+0000] {kafka_stream.py:62} INFO - Sending message to user_created topic: b'{"first_name": "Eva", "last_name": "Chen", "gender": "female", "address": "5234 South Road Upper Hut'
+[2026-06-01T16:23:16.145+0000] {conn.py:380} INFO - <BrokerConnection node_id=1 host=broker:29092 <connecting> [IPv4 ('172.18.0.5', 29092)]>: connecting to broker:29092 [('172.18.0.5', 29092) IPv4]
+[2026-06-01T16:23:16.146+0000] {conn.py:410} INFO - <BrokerConnection node_id=1 host=broker:29092 <connecting> [IPv4 ('172.18.0.5', 29092)]>: Connection complete.
+[2026-06-01T16:23:16.147+0000] {conn.py:919} INFO - <BrokerConnection node_id=bootstrap-0 host=broker:29092 <connected> [IPv4 ('172.18.0.5', 29092)]>: Closing connection. 
+[2026-06-01T16:23:16.154+0000] {kafka_stream.py:67} INFO - Message sent successfully to partition 0, offset 9
+[2026-06-01T16:23:18.155+0000] {kafka_stream.py:57} INFO - Fetching data iteration 2
+[2026-06-01T16:23:21.569+0000] {kafka_stream.py:62} INFO - Sending message to user_created topic: b'{"first_name": "Hunter", "last_name": "Harvey", "gender": "male", "address": "6996 The Green Killarn'
+[2026-06-01T16:23:21.574+0000] {kafka_stream.py:67} INFO - Message sent successfully to partition 0, offset 12
+[2026-06-01T16:23:23.578+0000] {kafka_stream.py:57} INFO - Fetching data iteration 3
+[2026-06-01T16:23:25.556+0000] {kafka_stream.py:62} INFO - Sending message to user_created topic: b'{"first_name": "Ludwig", "last_name": "Berger", "gender": "male", "address": "1392 Rue des Chartreux'
+[2026-06-01T16:23:25.560+0000] {kafka_stream.py:67} INFO - Message sent successfully to partition 0, offset 14
+[2026-06-01T16:23:27.563+0000] {kafka.py:483} INFO - Closing the Kafka producer with 9223372036.0 secs timeout.
+[2026-06-01T16:23:27.565+0000] {conn.py:919} INFO - <BrokerConnection node_id=1 host=broker:29092 <connected> [IPv4 ('172.18.0.5', 29092)]>: Closing connection. 
+[2026-06-01T16:23:27.566+0000] {kafka_stream.py:74} INFO - Producer closed successfully
+[2026-06-01T16:23:27.566+0000] {python.py:183} INFO - Done. Returned value was: None
+[2026-06-01T16:23:27.584+0000] {taskinstance.py:1368} INFO - Marking task as SUCCESS. dag_id=user_automation, task_id=stream_data_from_api, execution_date=20260601T160916, start_date=20260601T162308, end_date=20260601T162327
+[2026-06-01T16:23:27.649+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2026-06-01T16:23:27.678+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check
