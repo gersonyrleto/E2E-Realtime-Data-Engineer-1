@@ -16,13 +16,19 @@ E2E Realtime Data Engineering Project | With Airflow, Potsgree, Kafka, Spark &am
 
   2. Inisialize_put_data_from_airflow_to_kafka_DAG_airflow
    ![Figure](evidence-step-by-step/inisialize_put_data_from_airflow_to_kafka_DAG_airflow_2.png)
+   
 - Real-time data streaming with Apache Kafka
-  1. 
+  1. Run_Schedule_DAG_Airflow_Load_To_Kafka
+   ![Figure](evidence-step-by-step/Run_Schedule_DAG_Airflow_Load_To_kafka.png)
+
+  2. Result_Data_Realtime_On_Kafka
+   ![Figure](evidence-step-by-step/Result_Data_Realtime_On_Kafka.png)
+
 - Distributed synchronization with Apache Zookeeper
   1. Sync_zookeeper_control-center_&_schema_registry_on_Kafka
   ![Figure](evidence-step-by-step/sync_zookeeper_control-center_&_schema_registry_on_Kafka.png)
 
-  2. Result_zookeeper_control-center__schema_registry_on_Kafka
+  1. Result_zookeeper_control-center__schema_registry_on_Kafka
    ![Figure](evidence-step-by-step/sync_zookeeper_control-center_&_schema_registry_on_Kafka_Result.png)
 
 - Data processing techniques with Apache Spark
